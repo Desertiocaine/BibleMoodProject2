@@ -1,93 +1,52 @@
 
 # Bible Mood App
 
-Welcome to the Bible Mood App! This application provides relevant Bible verses based on your current mood, offering spiritual encouragement and inspiration tailored to your emotional state.
-
-## Overview
-
-The Bible Mood App is designed to be simple yet powerful. With an intuitive graphical user interface (GUI), you can input how you are feeling, and the app will suggest Bible verses that resonate with your mood.
+The Bible Mood App provides Bible verses tailored to your emotions, helping you find comfort and inspiration.
 
 ## Features
 
-- **Mood Detection**: Enter your mood and get suggested Bible verses that match.
-- **User-Friendly Interface**: A clean and simple GUI for ease of use.
-- **Persistent Data Storage**: Mood and verse mappings are stored in a JSON file.
-- **Search and Sort (Upcoming)**: Advanced search options to find specific verses and sort them according to preferences.
+- Retrieve verses based on selected moods.
+- Easy-to-use graphical interface.
+- Supports a range of emotions such as happy, sad, anxious, mad, and grateful.
 
-## Getting Started
+## Installation
 
-Follow these instructions to set up and run the Bible Mood App on your local machine.
-
-### Prerequisites
-
-Ensure you have the following software installed:
-
-- **Python 3.x**: You can download it from the [official Python website](https://www.python.org/).
-
-### Installation
-
-1. **Clone the Repository**
-
-   Open your terminal and run:
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/bible-mood-app.git
+   git clone https://github.com/yourusername/bible-mood-app.git
    ```
-
-2. **Navigate to the Project Directory**
-
+2. **Navigate into the Directory**:
    ```bash
    cd bible-mood-app
    ```
-
-3. **Install Dependencies**
-
-   If your project later includes third-party libraries (e.g., for GUI enhancements or additional features), set up a virtual environment and install dependencies using:
+3. **Install Dependencies**:
+   Ensure you have Python installed, then run:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    pip install -r requirements.txt
    ```
 
-### Usage
+## Usage
 
-To start the application, run:
-
-```bash
-python gui.py
-```
-
-- Enter your mood in the provided input field.
-- Click "Find Verse" to receive Bible verses related to your mood.
-- Read and reflect on the suggested verses displayed in the app.
-
-## File Structure
-
-- **data_manager.py**: Handles data loading and retrieval from the JSON file.
-- **gui.py**: Manages the graphical user interface and user interactions.
-- **moods_verses.json**: Contains the mood-to-verse mappings.
-- **test_data_manager.py**: Unit tests for verifying data handling functionalities.
-
-## Testing
-
-To run the unit tests, execute the following command:
-
-```bash
-python -m unittest test_data_manager.py
-```
-
-## Future Improvements
-
-- **Enhanced Search and Sort**: Features to enable searching by keywords and sorting verses.
-- **Customization Options**: Allow users to add personal notes to verses and save favorites.
-- **Localization**: Add support for multiple languages.
+1. **Run the App**:
+   ```bash
+   python main.py
+   ```
+2. **Select Your Mood**: 
+   Use the dropdown menu to select how you’re feeling.
+3. **Find Verses**:
+   Click the "Find Verse" button to display a relevant Bible verse.
 
 ## Contributing
 
-We welcome contributions to enhance the Bible Mood App. Please read our [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to get involved.
+1. Fork the repository.
+2. Create a new branch for your feature (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m 'Add feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a pull request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Acknowledgements
 

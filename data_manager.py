@@ -13,13 +13,13 @@ class DataManager:
     def load_data(self):
         """Load mood and verse data from a JSON file."""
         try:
-            with open(self.file_path, 'r') as file:
+            with open(self.file_path, 'r', encoding='utf-8') as file:
                 return json.load(file)
         except FileNotFoundError:
-            print("Data file not found. Ensure the file is in the correct location.")
+            print("The JSON file was not found.")
             return {}
         except json.JSONDecodeError:
-            print("Error decoding JSON from the data file.")
+            print("Error decoding JSON.")
             return {}
 
     def get_verses(self, mood):
