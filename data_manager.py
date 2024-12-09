@@ -8,7 +8,6 @@ class DataManager:
     def __init__(self, file_path):
         self.file_path = file_path
         self.data = self.load_data()
-        print(self.data)
 
     def load_data(self):
         """Load mood and verse data from a JSON file."""
