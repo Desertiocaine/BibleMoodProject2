@@ -19,27 +19,33 @@ class BibleMoodApp:
         # Set Background Color
         self.root.configure(bg='#b3cde0')  # Pastel blue background
 
-        self.mood_label = tk.Label(self.root, text="Select Your Mood:", font=("Helvetica", 16), bg='#b3cde0', fg='black')
+        self.mood_label = tk.Label(self.root, text="Select Your Mood:", font=("Comic Sans MS", 16), bg='#b3cde0',
+                                   fg='black')
         self.mood_label.pack(pady=10)
 
-        self.moods = ["happy", "sad", "mad", "anxious", "grateful"]
+        self.moods = ["Happy", "Sad", "Mad", "Anxious", "Grateful"]
         self.selected_mood = tk.StringVar(self.root)
         self.selected_mood.set(self.moods[0])
 
         self.mood_menu = tk.OptionMenu(self.root, self.selected_mood, *self.moods)
-        self.mood_menu.config(font=("Helvetica", 14), bg='#b3cde0', fg='black', highlightbackground='#b3cde0')
+        self.mood_menu.config(font=("Comic Sans MS", 14), bg='#b3cde0', fg='black', highlightbackground='#b3cde0')
         self.mood_menu.pack(pady=10)
 
-        self.submit_button = tk.Button(self.root, text="Find Verse", command=self.find_verse, font=("Helvetica", 14), bg='white', fg='black', highlightbackground='#b3cde0')
+        self.submit_button = tk.Button(self.root, text="Find Verse", command=self.find_verse,
+                                       font=("Comic Sans MS", 14), bg='white', fg='black',
+                                       highlightbackground='#b3cde0')
         self.submit_button.pack(pady=10)
 
-        self.result_display = tk.Text(self.root, wrap='word', width=70, height=10, font=("Helvetica", 14), bg='white', fg='black')
+        self.result_display = tk.Text(self.root, wrap='word', width=70, height=10, font=("Comic Sans MS", 14),
+                                      bg='#f0f8ff', fg='black')
         self.result_display.pack(pady=10)
+        self.result_display.config(state=tk.DISABLED)  # Make the text box non-editable
 
     def find_verse(self):
         """Finds and displays one random verse based on user mood input."""
         mood = self.selected_mood.get().lower()  # Get selected mood
         verses = self.data_manager.get_verses(mood)
+        self.result_display.config(state=tk.NORMAL)  # Enable the text box
         self.result_display.delete(1.0, tk.END)
         if verses:
             import random
@@ -47,3 +53,4 @@ class BibleMoodApp:
             self.result_display.insert(tk.END, random_verse + "\n")
         else:
             self.result_display.insert(tk.END, f"No verses found for mood: {mood}")
+        self.result_display.config(state=tk.DISABLED)  # Disable the text box again
